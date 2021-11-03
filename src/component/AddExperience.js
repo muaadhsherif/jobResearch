@@ -40,26 +40,26 @@ const AddExperience = () => {
 			<form className='form' onSubmit={handleSubmit}>
 				<div className='mb-3'>
 					<label htmlFor='companyName'>Company Name : </label>
-					<input id='companyName' ref={companyContainer} className='form-control' type='text' />
+					<input type='text' required ref={companyContainer} id='companyName' className='form-control' />
 				</div>
 
 				<div className='mb-3'>
 					<label className='form-label' htmlFor='startDate'>
 						Start Date :
 					</label>
-					<input type='date' ref={startDate} id='startDate' className='form-control' />
+					<input type='date' required ref={startDate} id='startDate' className='form-control' />
 				</div>
 
 				<div className='mb-3'>
 					<label className='form-label' htmlFor='endDate'>
 						End Date :
 					</label>
-					<input type='date' ref={endDate} id='endDate' className='form-control' />
+					<input type='date' required ref={endDate} id='endDate' className='form-control' />
 				</div>
 
 				<div className='mb-3'>
 					<label className='form-label'>Working Fields :</label>
-					<select className='form-select' ref={workingField} defaultValue=''>
+					<select required ref={workingField} defaultValue='' className='form-select'>
 						<option value=''> Fields</option>
 						{fieldsData.map((field, index) => {
 							return (
@@ -73,7 +73,7 @@ const AddExperience = () => {
 
 				<div className='mb-3'>
 					<label className='form-label'>Position :</label>
-					<select className='form-select' ref={position} defaultValue=''>
+					<select required ref={position} defaultValue='' className='form-select'>
 						<option value=''> Positions</option>
 						{positionsData.map((position, index) => {
 							return (
