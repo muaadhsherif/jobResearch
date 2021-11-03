@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import fieldsData from '../data/fieldsData'
-import postionsData from '../data/postionsData'
+import positionsData from '../data/positionsData'
 
 const AddExperience = () => {
 	// ----------------- Hooks --------------------
@@ -8,9 +8,9 @@ const AddExperience = () => {
 	const companyContainer = useRef(null)
 	const startDate = useRef(null)
 	const endDate = useRef(null)
-	const postion = useRef(null)
+	const position = useRef(null)
 	const workingField = useRef(null)
-	// -----------------Handels -------------------
+	// -----------------Handles -------------------
 	const handleSubmit = (e) => {
 		e.preventDefault()
 
@@ -18,20 +18,20 @@ const AddExperience = () => {
 		const newCompany = companyContainer.current.value
 		const newStartDate = startDate.current.value
 		const newEndDate = endDate.current.value
-		const newPostion = postion.current.value
+		const newPosition = position.current.value
 		const newWorkingField = workingField.current.value
 
-		const newExprence = [
+		const newExperience = [
 			...experiences,
 			{
 				companyName: newCompany,
 				startDate: newStartDate,
 				endDate: newEndDate,
-				postion: newPostion,
+				position: newPosition,
 				workingField: newWorkingField
 			}
 		]
-		setExperiences(() => newExprence)
+		setExperiences(() => newExperience)
 		console.log(experiences)
 	}
 	return (
@@ -39,20 +39,20 @@ const AddExperience = () => {
 			<h1>Add Experience</h1>
 			<form className='form' onSubmit={handleSubmit}>
 				<div className='mb-3'>
-					<label htmlFor='companyName'>Company name : </label>
+					<label htmlFor='companyName'>Company Name : </label>
 					<input id='companyName' ref={companyContainer} className='form-control' type='text' />
 				</div>
 
 				<div className='mb-3'>
 					<label className='form-label' htmlFor='startDate'>
-						Start date :
+						Start Date :
 					</label>
 					<input type='date' ref={startDate} id='startDate' className='form-control' />
 				</div>
 
 				<div className='mb-3'>
 					<label className='form-label' htmlFor='endDate'>
-						End date :
+						End Date :
 					</label>
 					<input type='date' ref={endDate} id='endDate' className='form-control' />
 				</div>
@@ -68,18 +68,17 @@ const AddExperience = () => {
 								</option>
 							)
 						})}
-						<option value='3'>Three</option>
 					</select>
 				</div>
 
 				<div className='mb-3'>
-					<label className='form-label'>Postion :</label>
-					<select className='form-select' ref={postion}>
-						<option defaultValue> Postions</option>
-						{postionsData.map((postion, index) => {
+					<label className='form-label'>Position :</label>
+					<select className='form-select' ref={position}>
+						<option defaultValue> Positions</option>
+						{positionsData.map((position, index) => {
 							return (
-								<option key={index} value={postion}>
-									{postion}
+								<option key={index} value={position}>
+									{position}
 								</option>
 							)
 						})}
