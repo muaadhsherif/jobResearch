@@ -59,8 +59,8 @@ const AddExperience = () => {
 
 				<div className='mb-3'>
 					<label className='form-label'>Working Fields :</label>
-					<select className='form-select' ref={workingField}>
-						<option defaultValue> Fields</option>
+					<select className='form-select' ref={workingField} defaultValue=''>
+						<option value=''> Fields</option>
 						{fieldsData.map((field, index) => {
 							return (
 								<option key={index} value={field}>
@@ -73,8 +73,8 @@ const AddExperience = () => {
 
 				<div className='mb-3'>
 					<label className='form-label'>Position :</label>
-					<select className='form-select' ref={position}>
-						<option defaultValue> Positions</option>
+					<select className='form-select' ref={position} defaultValue=''>
+						<option value=''> Positions</option>
 						{positionsData.map((position, index) => {
 							return (
 								<option key={index} value={position}>
