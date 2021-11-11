@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import fieldsData from '../data/fieldsData'
 import positionsData from '../data/positionsData'
 
@@ -32,8 +32,12 @@ const AddExperience = () => {
 			}
 		]
 		setExperiences(() => newExperience)
-		console.log(experiences)
 	}
+
+	useEffect(() => {
+		if (experiences.length) console.log('experiences')
+	})
+
 	return (
 		<div className='col-xs-5 center-block'>
 			<h1>Add Experience</h1>
